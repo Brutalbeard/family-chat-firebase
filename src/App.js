@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import {auth, provider, db} from './firebase.js';
 import { Menu, Container, Form, Button, Divider } from 'semantic-ui-react'
-// import PostThingy from './components/post-view'
 import ChatWindow from './components/chat-window'
-
-import 'semantic-ui-css/semantic.min.css';
 
 class App extends Component {
 
@@ -43,12 +40,13 @@ class App extends Component {
 
   handleSubmit(e) {
     const otherPostsRef = db.collection('posts')
+    let date = new Date()
     e.preventDefault();
     otherPostsRef.doc().set({
       message: this.state.postMessage,
       user: this.state.user.displayName || this.state.user.email,
       authorId: this.state.user.uid,
-      created: Date(),
+      created: date.toUTCString(),
       photo: this.state.user.photoURL,
       likes: 0
     })
