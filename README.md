@@ -4,6 +4,29 @@ This is something I was just building for fun. I'll probably keep working on it,
 
 Hosting here for the time being https://fir-fun-89ed0.firebaseapp.com
 
+It's a lot of yammering below. Lemme summup.
+
+This should get you up and running with the app if you'd like to check it out locally.
+
+```
+git clone https://github.com/Brutalbeard/family-chat-firebase.git
+cd family-chat-firebase
+yarn install
+yarn start
+```
+
+Make a copy of ```env_example``` and fill out the appropriate fields that you'll get from youe Firebase console, and have at it.
+
+## Things of note
+
+I originally checked out the real time database from Google Firebase, and that's cool, but I didn't want to get entrenched with having to use Algolia for queries and all that. 
+
+Read through the Firebase docs, and the programmatic interface for the Firestore (beta) is almost identical to MongoDB (in fact they're probably just a wrapper for it), and I've worked with Mongo before so I went for it.
+
+Definitely like have a proper query system compared to the Realtime DB. Haven't written in my search yet, but I'm sure I'll get round to it.
+
+
+
 ---------
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

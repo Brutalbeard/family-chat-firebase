@@ -77,7 +77,7 @@ class App extends Component {
   }
 
   login() {
-    auth.signInWithPopup(provider) 
+    auth.signInWithPopup( provider ) 
       .then((result) => {
         const user = result.user;
         this.setState({
@@ -85,6 +85,8 @@ class App extends Component {
         });
       });
   }
+
+  
 
   logout() {
     auth.signOut()
