@@ -1,5 +1,9 @@
 # Family Chat
 
+**Big Shout Out** to [Semantic-ui](https://react.semantic-ui.com/introduction). It's a gorgeous collection of open source React UI components (they have standard boring HTML if you want it too). Really allowed me to make a much prettier interface with very little fuss.
+
+------
+
 This is something I was just building for fun. I'll probably keep working on it, but for the time being, just gonna leave it right here. 
 
 Hosting here for the time being https://fir-fun-89ed0.firebaseapp.com
