@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {auth, provider, db} from './firebase.js';
-import { Menu, Container, Form, Button, Divider } from 'semantic-ui-react'
+import { Container, Form, Button, Divider } from 'semantic-ui-react'
 import ChatWindow from './components/chat-window'
+import NavBar from './layout/NavBar'
 
 class App extends Component {
 
@@ -86,8 +87,6 @@ class App extends Component {
       });
   }
 
-  
-
   logout() {
     auth.signOut()
       .then(() => {
@@ -100,14 +99,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Menu>
-          <Menu.Item header>Welcome</Menu.Item>
-            {this.state.user ?
-              <Menu.Item position='right' onClick={this.logout}>Log Out</Menu.Item>                
-              :
-              <Menu.Item position='right' onClick={this.login}>Log In</Menu.Item>              
-            }
-        </Menu>
+        <NavBar logout={this.logout.bind(this)} login={this.login.bind(this)} user={this.state.user} />
         {this.state.user ?
           <Container>
             <Form onSubmit={this.handleSubmit} >
