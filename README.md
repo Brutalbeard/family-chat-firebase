@@ -27,7 +27,7 @@ I originally checked out the real time database from Google Firebase, and that's
 
 Read through the Firebase docs, and the programmatic interface for the Firestore (beta) is almost identical to MongoDB (in fact they're probably just a wrapper for it), and I've worked with Mongo before so I went for it.
 
-Definitely like have a proper query system compared to the Realtime DB. Haven't written in my search yet, but I'm sure I'll get round to it.
+Definitely like having a proper query system compared to the Realtime DB. Haven't written in my search yet, but I'm sure I'll get round to it.
 
 
 
