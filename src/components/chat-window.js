@@ -5,14 +5,9 @@ import TimeAgo from 'react-timeago'
 export default class ChatWindow extends Component {
 
     makeElement() {
-        
-        // console.log(this.props)
-
-        // this.props.posts.forEach(post => {
-        //   console.log(post.data())
-        // })
 
         const element = []
+
         this.props.posts.forEach(post =>
             element.push(
                 <Feed.Event key={post.id}>
@@ -34,6 +29,7 @@ export default class ChatWindow extends Component {
         )
         return element
     }
+    
   render() {
     return (
         <Feed>

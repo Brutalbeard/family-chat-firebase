@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       posts: [],
       postMessage: '',
-      user: null
+      user: null,
+      chat: 'posts'
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +21,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const otherPostsRef = db.collection('posts')
+    const otherPostsRef = db.collection(this.state.chat)
 
     otherPostsRef.orderBy("created", "desc").limit(20).onSnapshot(snapshot => {
       this.setState({posts: snapshot})
@@ -40,7 +41,7 @@ class App extends Component {
   }
 
   handleSubmit(e) {
-    const otherPostsRef = db.collection('posts')
+    const otherPostsRef = db.collection(this.state.chat)
     let date = new Date()
     e.preventDefault();
     otherPostsRef.doc().set({
@@ -57,12 +58,12 @@ class App extends Component {
   }
 
   removeItem(postId) {
-    const otherPostsRef = db.collection('posts')
+    const otherPostsRef = db.collection(this.state.chat)
     otherPostsRef.doc(postId).delete();
   }
 
   handleLikes(postId) {
-    const otherPostsRef = db.collection('posts')
+    const otherPostsRef = db.collection(this.state.chat)
 
     let post = otherPostsRef.doc(postId)
 
@@ -104,7 +105,7 @@ class App extends Component {
           <Container>
             <Form onSubmit={this.handleSubmit} >
               <Form.Field>
-                <label>Message</label>
+                <label>{this.state.chat} chat</label>
                 <input placeholder='get typin...' name='postMessage' value={this.state.postMessage} onChange={this.handleChange}/>
               </Form.Field>
               <Button type='submit'>Submit</Button>
